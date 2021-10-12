@@ -1,18 +1,18 @@
 <h2>Reactivos: Switches</h2>
 <hr>
 
-<form>
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Género</label>
         <div class="col-sm-9">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioGenero" id="radioMasculino" value="M" name="rdGenero">
+                <input class="form-check-input" type="radio" id="radioMasculino" value="M" formControlName="genero">
                 <label class="form-check-label" for="radioMasculino">
                     Masculino
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioGenero" id="radioFemenino" value="F" name="rdGenero">
+                <input class="form-check-input" type="radio" id="radioFemenino" value="F" formControlName="genero">
                 <label class="form-check-label" for="radioFemenino">
                     Femenino
                 </label>
@@ -23,7 +23,7 @@
         <label class="col-sm-3 col-form-label">Notificaciones</label>
         <div class="col-sm-9">
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="checkNotificaciones">
+                <input class="form-check-input" type="checkbox" id="checkNotificaciones" formControlName="notificaciones">
                 <label class="form-check-label" for="checkNotificaciones">Quiero recibir notificaciones</label>
             </div>
         </div>
@@ -32,7 +32,7 @@
         <label class="col-sm-3 col-form-label"></label>
         <div class="col-sm-9">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkTerminos" name="terminos">
+                <input class="form-check-input" type="checkbox" value="" id="checkTerminos" name="terminos" formControlName="condiciones">
                 <label class="form-check-label" for="checkTerminos">
                     Terminos y condiciones
                 </label>
@@ -41,12 +41,12 @@
     </div>
     <div class="row">
         <div class="col">
-            <button class="btn btn-primary float-end">Guardar</button>
+            <button class="btn btn-primary float-end" type="submit">Guardar</button>
         </div>
     </div>
 </form>
 
-<!-- <h5>Valor del formulario</h5>
+<h5>Valor del formulario</h5>
 <pre>{{ miFormulario.value | json }}</pre>
 
 <h5>Persona</h5>
@@ -56,7 +56,7 @@
 <pre>{{ miFormulario.valid }}</pre>
 
 <h5>Términos</h5>
-<pre>{{ miFormulario.controls?.terminos?.errors | json}}</pre>
+<!-- <pre>{{ miFormulario.controls?.terminos?.errors | json}}</pre> -->
 
 <h5>Condiciones</h5>
-<pre>{{ miFormulario.value | json }}</pre> -->
+<!-- <pre>{{ miFormulario.value | json }}</pre> -->
